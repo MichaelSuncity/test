@@ -75,6 +75,30 @@ const addNumber = createIncrementor(5)
 
 console.log(addNumber(10))
 
+
+/*
+Задание №9.
+Написать функцию, которая уменьшает или увеличивает указанное время на заданное количество минут.
+changeTime('10:00', 1) //return '10:01'
+changeTime('10:00', -1) //return '09:59'
+changeTime('23:59', 1) //return '00:00'
+changeTime('00:00', -1) //return '23:59'
+*/ 
+
+function  changeTime(time, interval){
+    const arr = time.split(':');
+    let hours = +arr[0];
+    let minutes= +arr[1];
+    let newTime = new Date();
+    newTime.setHours(hours);
+    newTime.setMinutes(minutes + interval)
+    return console.log(('0'+newTime.getHours()).slice(-2)+':' + ('0'+ newTime.getMinutes()).slice(-2));
+}
+
+changeTime('10:00', 1) 
+changeTime('10:00', -1) 
+changeTime('23:59', 1) 
+changeTime('00:00', -1)
 /*
 Задание №11.
 Написать простую игру «Угадай число». Программа загадывает случайное число от 0 до 100. 
