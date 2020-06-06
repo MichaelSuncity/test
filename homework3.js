@@ -36,13 +36,18 @@ function helloWorld(event) {
 Задание №6.
 Найти все элементы div с классом one, а также все элементы p с классом two, затем добавить им всем класс three и визуально плавно спустить вниз.
 */ 
-
-
-document.getElementById("down").addEventListener("click", down);
+function init() {
+    document.getElementById("down").addEventListener("click", down);
+}
 
 function down(event) {
     event.preventDefault();
-    document.getElementsByClassName("one").classList.add("three");
-    //document.getElementsByClassName("two").classList.add("three");
-    console.log("down");
+    let $one = document.getElementsByClassName("one");
+    let $two = document.getElementsByClassName("two");
+    $one = [...$one];
+    $two = [...$two];
+    $one.map(node => node.classList.add("three"));
+    $two.map(node => node.classList.add("three"));
 }
+
+window.addEventListener('load', init)

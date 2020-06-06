@@ -12,5 +12,15 @@
 
 
 .three {
-    background-color: red;
+    animation-name: myAnimation;
+    animation-duration: 2s;
+}
+
+@keyframes myAnimation {
+    from {
+        top: 0;
+    }
+    to {
+        top: 500px;
+    }
 }
