@@ -74,3 +74,48 @@ function createIncrementor(n){
 const addNumber = createIncrementor(5)
 
 console.log(addNumber(10))
+
+/*
+Задание №11.
+Написать простую игру «Угадай число». Программа загадывает случайное число от 0 до 100. 
+Игрок должен вводить предположения и получать ответы «Больше», «Меньше» или «Число угадано».*/ 
+
+
+function getRandomNumber(){
+    return Math.floor(Math.random()*100);
+}
+
+function hide(id){
+    document.getElementById(id).style.display = "none";
+}
+
+function info(text){
+    document.getElementById("info").textContent = text;
+}
+
+function getAnswer(){
+    let number = document.getElementById('inputField').value;
+    return parseInt(number);
+}
+
+
+let random = getRandomNumber();
+console.log(random)
+
+document.getElementById('confirm').addEventListener('click', guess)
+
+
+function guess(){
+    let answer = getAnswer();
+    if(answer == random){
+        info("Число угадано");
+        hide("confirm")
+    } else if (answer > random){
+        info("Больше");
+    } else if (answer < random){
+        info("Меньше");
+    } else {
+        info("Ошибка ввода! Нужно ввести число.");
+    }
+}
+
