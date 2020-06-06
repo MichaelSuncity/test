@@ -15,6 +15,7 @@
     animation-name: myAnimation;
     animation-duration: 2s;
     background-color: red;
+    position: relative;
 }
 
 @keyframes myAnimation {
@@ -22,6 +23,6 @@
         top: 0;
     }
     to {
-        top: 500px;
+        top: 250px;
     }
 }
