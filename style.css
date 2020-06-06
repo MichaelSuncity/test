@@ -14,6 +14,7 @@
 .three {
     animation-name: myAnimation;
     animation-duration: 2s;
+    background-color: red;
 }
 
 @keyframes myAnimation {
