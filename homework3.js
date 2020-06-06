@@ -71,6 +71,6 @@ function createIncrementor(n){
     }
 }
 
-const addOne = createIncrementor(5)
+const addNumber = createIncrementor(5)
 
-console.log(addOne(10))
+console.log(addNumber(10))
