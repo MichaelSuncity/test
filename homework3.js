@@ -51,3 +51,26 @@ function down(event) {
 }
 
 window.addEventListener('load', init)
+
+
+/*
+Задание №7.
+Выбрать видимый div с именем red, который содержит тег span.
+*/ 
+
+let $red = document.getElementsByName("red");
+console.log($red);
+
+/*
+Задание №8.
+Привести пример замыкания*/ 
+
+function createIncrementor(n){
+    return function(num){
+        return n + num
+    }
+}
+
+const addOne = createIncrementor(5)
+
+console.log(addOne(10))
