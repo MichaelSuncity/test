@@ -99,6 +99,64 @@ changeTime('10:00', 1)
 changeTime('10:00', -1) 
 changeTime('23:59', 1) 
 changeTime('00:00', -1)
+
+/*
+Задание №10.
+Написать функцию, возвращающую градус, на который указывают часовая и минутная
+стрелки в зависимости от времени, например:
+clock_degree ( "00:00" ) returns : "360:360"
+clock_degree ( "01:01" ) returns : "30:6"
+clock_degree ( "00:01" ) returns : "360:6"
+clock_degree ( "01:00" ) returns : "30:360"
+clock_degree ( "01:30" ) returns : "30:180"
+clock_degree ( "24:00" ) returns : "Check your time !"
+clock_degree ( "13:60" ) returns : "Check your time !"
+clock_degree ( "20:34" ) returns : "240:204"
+*/ 
+
+const ROUNDDIAL = 360; //360 градусов составляет окружность(циферблат часов)
+const MINUTESONDIAL = 60; //кол-во минут на циферблате
+const HOURSONDIAL = 12; //кол-во часов на циферблате
+
+function clock_degree(time){
+    const arr = time.split(':');
+    let hours = +arr[0];
+    let minutes= +arr[1];
+
+    let info = "";
+    let hourDegree = 360;  //т.к. при 00 часов и 00 минут должно возвращать 360 градусов, то по умолчанию установил эти значения
+    let minuteDegree = 360;
+
+    if (hours < 0 || hours >= 24) {
+        hourDegree = false;
+    } else if(hours != 0) {
+        hourDegree = hours % 12 * ROUNDDIAL / HOURSONDIAL;
+    }
+    
+    if (minutes < 0 || minutes >= 60) {
+        minuteDegree = false;
+    } else if (minutes != 0){
+        minuteDegree = minutes * ROUNDDIAL / MINUTESONDIAL;
+    }
+    
+    if (!hourDegree || !minuteDegree){
+        info = "Check your time !";   
+    } else {
+        info = `"${hourDegree}:${minuteDegree}"`
+    }
+    return console.log(info);
+}
+
+clock_degree ( "00:00" ) 
+clock_degree ( "01:01" ) 
+clock_degree ( "00:01" ) 
+clock_degree ( "01:00" ) 
+clock_degree ( "01:30" ) 
+clock_degree ( "24:00" ) 
+clock_degree ( "13:60" ) 
+clock_degree ( "20:34" ) 
+
+
 /*
 Задание №11.
 Написать простую игру «Угадай число». Программа загадывает случайное число от 0 до 100. 
