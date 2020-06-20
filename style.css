@@ -1,0 +1,47 @@
+.table {
+    width: 250px;
+    border: 1px solid black;
+    height: 150px;
+    border-collapse: collapse;
+}
+
+.table td {
+    border: 1px solid black;
+    border-color: black;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.imgLink {
+    width: 100px;
+    height: 100px;
+    outline: none;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.horTable div {
+    background-color: lightseagreen;
+    color: white;
+    width: 100px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.horTable {
+    text-align: center;
+}
+
+.middle {
+    display: inline-block;
+}
