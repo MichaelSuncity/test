@@ -1,0 +1,28 @@
+.one, .two {
+    width: 150px;
+}
+
+.one {
+    background-color: green;
+}
+
+.two {
+    background-color: yellow;
+}
+
+
+.three {
+    animation-name: myAnimation;
+    animation-duration: 2s;
+    background-color: red;
+    position: relative;
+}
+
+@keyframes myAnimation {
+    from {
+        top: 0;
+    }
+    to {
+        top: 250px;
+    }
+}
